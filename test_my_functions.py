@@ -94,3 +94,18 @@ def test_prime(inputnumber, expectedOutput):
 def test_prime_notnumbers():
     with pytest.raises(ValueError, match=r"Input must be a positive integer"):
         result = my_function.is_prime(-1)
+
+@pytest.mark.parametrize("inputstring,outputString", [("Apple", "elppA")])
+def test_reverse_string(inputstring, outputString):
+    assert my_function.reverse_string(inputstring) == outputString
+
+@pytest.mark.parametrize("invalid_input",
+                         [(100),
+                          (100.879),
+                          (-100)
+                          ])
+def test_reverse_invalidNumbers(invalid_input):
+    with pytest.raises(TypeError, match=r"Input must be a string"):
+        result = my_function.reverse_string(invalid_input)
+
+
