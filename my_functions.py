@@ -40,3 +40,8 @@ def is_prime(num):
         if num % i == 0:
             return False
     return True
+
+def reverse_string(s):
+    if not isinstance(s, str):
+        raise TypeError("Input must be a string")
+    return s[::-1]
