@@ -42,6 +42,16 @@ def is_prime(num):
     return True
 
 def reverse_string(s):
+    """Utility function for reversing a string
+    
+    Incase given input is not a string, it will 
+    raise a TypeError
+    Args:
+        s: Input string
+    Raises:
+        TypeError: input to be string
+    Returns: reversed sting
+    """
     if not isinstance(s, str):
         raise TypeError("Input must be a string")
     return s[::-1]
