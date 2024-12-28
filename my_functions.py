@@ -55,3 +55,44 @@ def reverse_string(s):
     if not isinstance(s, str):
         raise TypeError("Input must be a string")
     return s[::-1]
+
+def find_max(numbers):
+    if not numbers:
+        raise ValueError("The list cannot be empty")
+    if not all(isinstance(x, (int, float)) for x in numbers):
+        raise TypeError("All elements must be numbers")
+    return max(numbers)
+
+def remove_duplicates(items):
+    return list(set(items))
+
+def calculator(a, b, operation):
+    if operation == "add":
+        return a + b
+    elif operation == "subtract":
+        return a - b
+    elif operation == "multiply":
+        return a * b
+    elif operation == "divide":
+        if b == 0:
+            raise ZeroDivisionError("Cannot divide by zero")
+        return a / b
+    else:
+        raise ValueError("Invalid operation")
+
+def has_unique_characters(s):
+    if not isinstance(s, str):
+        raise TypeError("Input must be a string")
+    return len(set(s)) == len(s)
+
+def to_uppercase(strings):
+    if not all(isinstance(s, str) for s in strings):
+        raise TypeError("All elements must be strings")
+    return [s.upper() for s in strings]
+
+def gcd(a, b):
+    if not all(isinstance(x, int) for x in (a, b)):
+        raise TypeError("Inputs must be integers")
+    while b:
+        a, b = b, a % b
+    return abs(a)
